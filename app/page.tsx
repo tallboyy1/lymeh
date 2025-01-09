@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SplashScreen from "./ui/splash/splash";
 
 export default function Home() {
