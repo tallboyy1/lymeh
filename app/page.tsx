@@ -1,3 +1,4 @@
+import KeyServices from "./ui/services/services";
 import SplashScreen from "./ui/splash/splash";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
         {/* </section> */}
         <SplashScreen />
         <div>
+          <KeyServices />
         </div>
       </main>
     </>
