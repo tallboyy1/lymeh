@@ -111,13 +111,24 @@ const KeyServices: React.FC = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   // Rotate words at an interval
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
+//     }, 2000); // Change words every 2 seconds
+
+//     return () => clearInterval(interval);
+//   }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
     }, 2000); // Change words every 2 seconds
-
-    return () => clearInterval(interval);
+  
+    return () => {
+      clearInterval(interval); // Proper cleanup
+    };
   }, []);
+  
 
   return (
     <div className="h-screen w-full bg-black bg-cover bg-center transition-all duration-500">
