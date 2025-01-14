@@ -139,10 +139,14 @@ const KeyServices: React.FC = () => {
           backgroundImage: hoveredImage ? `url(${hoveredImage})` : "none",
         }}
       >
-        <div className="h-full w-full bg-black/70 flex flex-row justify-between items-center px-16">
+
+    {/* Darkening Overlay */}
+      {/* <div className=" inset-0 bg-black/20 z-0"></div> */}
+
+        <div className="h-full max-w-7xl mx-auto bg-black/70 grid grid-cols-2 gap-12 items-center px-16">
           {/* Left Section: Animated Text */}
-          <div className="text-white text-5xl font-bold">
-            <div className="relative h-16 overflow-hidden">
+          <div className="h-64 text-white text-5xl font-bold">
+            <div className="relative">
               {/* Static 'We' */}
               <p className="absolute top-0 left-0">We</p>
               {/* Rotating Words */}
@@ -150,7 +154,7 @@ const KeyServices: React.FC = () => {
                 {rotatingWords.map((word, index) => (
                   <p
                     key={word}
-                    className={`absolute left-0 transform transition-opacity duration-500 ${
+                    className={`absolute left-0 transform transition-opacity duration-500 ml-5 ${
                       index === currentWordIndex
                         ? "top-0 opacity-100"
                         : "top-16 opacity-0"
@@ -168,16 +172,18 @@ const KeyServices: React.FC = () => {
 
           {/* Right Section: List */}
           <div>
-            <h1 className="text-white text-5xl font-bold mb-8 text-right">KEY SERVICES</h1>
-            <ul className="text-white text-xl space-y-4 text-right">
+            <h1 className="text-white text-xs mb-3 text-left">KEY SERVICES</h1>
+            <ul className="text-white text-xl space-y-1 text-left">
               {services.map((service) => (
                 <li
                   key={service.title}
-                  className="cursor-pointer hover:font-bold transition-all"
+                  className="cursor-pointer hover:underline hover:text-yellow transition-all"
                   onMouseEnter={() => setHoveredImage(service.image)}
                   onMouseLeave={() => setHoveredImage(null)}
                 >
-                  {service.title}
+                  <span className="text-xs hover:text-sm">
+                    {service.title}
+                  </span>
                 </li>
               ))}
             </ul>
