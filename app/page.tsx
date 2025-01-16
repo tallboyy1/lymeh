@@ -1,3 +1,4 @@
+import Career from "./ui/career/career";
 import KeyServices from "./ui/services/services";
 import SplashScreen from "./ui/splash/splash";
 
@@ -11,6 +12,10 @@ export default function Home() {
         <SplashScreen />
         <div>
           <KeyServices />
+        </div>
+
+        <div>
+          <Career />
         </div>
       </main>
     </>
